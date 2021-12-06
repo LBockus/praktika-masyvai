@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = []; // random numbers array
+        for(let i = 0; i < 30; i++)
+        {
+            n[i] = Math.floor(Math.random() * (25 - 4) + 5);
+        }
+
+        // 2a
+
+        let sum10 = 0; // amount of elements with value of more than 10
+        for(let i = 0; i < 30; i++)
+        {
+            if(n[i] > 10){
+                sum10++;
+            }
+        }
+
+        // 2b
+
+        let maxVal = 0, maxValInd = []; // maximum value in array and its or theirs indexes
+        for(let i = 0; i < 30; i++)
+        {
+            if(n[i] > maxVal){
+                maxVal = n[i];
+            }
+        }
+        let j = 0;
+        for(let i = 0; i < 30; i++)
+        {
+            if (maxVal == n[i]){
+                maxValInd[j] = i;
+                j++;
+            }
+        }
+
+        // 2c
+
+        let evenSum = 0; // even index sum
+        for( let i = 0; i < 30; i++)
+        {
+            if(i % 2 == 0){
+                evenSum += n[i];
+            }
+        }
+
+        //2d
+
+        let m = [] // new array of modified numbers
+        for(let i = 0; i < 30; i++)
+        {
+            m[i] = n[i] - i;
+        }
+
+        // 2e
+
+        for( let i = 30; i < 40; i++)
+        {
+            n[i] = Math.floor(Math.random() * (25 - 4) + 5);
+        }
+
+        // 2f
+
+        let evenM = [], oddM = []; // arrays of even and odd indexes from first array
+        let e = 0, o = 0; // variables
+        for(i = 0; i < 40; i++)
+        {
+            if(i % 2 == 0){
+                evenM[e] = n[i];
+                e++;
+            }
+            else{
+                oddM[o] = n[i];
+                o++;
+            }
+        }
+
+        // 2g
+
+        for(i = 0; i < 40; i++)
+        {
+            if(i % 2 == 0 && n[i] > 15){
+                n[i] = 0;
+            }
+        }
+
+        // 2h
+
+        let minInd = -1; // first number with value of more than 10
+        let h = 0;
+        while(minInd == -1 && h < 40)
+        {
+            if(n[h] > 10){
+                minInd = h;
+            }
+            h++;
+        }
+
+        // output
+
+        console.log("Masyve reiksmiu daugiau negu 10 yra: " + sum10);
+        console.log("Didziausia masyvo reiksme: " + maxVal + " ir ju indeksai: ");
+        for(let i = 0; i <= j; i++)
+        {
+            console.log(maxValInd[i]);
+        }
+        console.log("Visu poriniu indeksu suma yra: " + evenSum);
+        console.log("Naujas masyvas kurio reiksmes yra pradinio masyvo reiksmes su atimtu indeksu: ");
+        for(let i = 0; i < 30; i++)
+        {
+            console.log(i + " " + m[i]);
+        }
+        console.log("Masyvas papildytas 10 reiksmiu ir poriniai indeksai kurie didesni nei 15 paversti i 0: ");
+        for(let i = 0; i < 40; i++)
+        {
+            console.log(i + " " + n[i]);
+        }
+        console.log("Poriniai ir neporiniai pirmojo masyvo masyvai: ");
+        for(let i = 0; i < o; i++)
+        {
+            console.log(i + " " + evenM[i] + " " + oddM[i]);
+        }
+        console.log("Maziausios reiksmes kuri didesne negu 10 indeksas: " + minInd);
+    </script>
+
+</body>
+</html>
