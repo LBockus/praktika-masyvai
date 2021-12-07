@@ -23,6 +23,7 @@
                 sum10++;
             }
         }
+        console.log("Masyve reiksmiu daugiau negu 10 yra: " + sum10);
 
         // 2b
 
@@ -41,6 +42,11 @@
                 j++;
             }
         }
+        console.log("Didziausia masyvo reiksme: " + maxVal + " ir ju indeksai: ");
+        for(let i = 0; i <= j; i++)
+        {
+            console.log(maxValInd[i]);
+        }
 
         // 2c
 
@@ -51,6 +57,7 @@
                 evenSum += n[i];
             }
         }
+        console.log("Visu poriniu indeksu suma yra: " + evenSum);
 
         //2d
 
@@ -59,12 +66,22 @@
         {
             m[i] = n[i] - i;
         }
+        console.log("Naujas masyvas kurio reiksmes yra pradinio masyvo reiksmes su atimtu indeksu: ");
+        for(let i = 0; i < 30; i++)
+        {
+            console.log(i + " " + m[i]);
+        }
 
         // 2e
 
         for( let i = 30; i < 40; i++)
         {
             n[i] = Math.floor(Math.random() * (25 - 4) + 5);
+        }
+        console.log("Masyvas papildytas 10 reiksmiu: ");
+        for(let i = 0; i < 40; i++)
+        {
+            console.log(i + " " + n[i]);
         }
 
         // 2f
@@ -82,6 +99,11 @@
                 o++;
             }
         }
+        console.log("Poriniai ir neporiniai pirmojo masyvo masyvai: ");
+        for(let i = 0; i < o; i++)
+        {
+            console.log(i + " " + evenM[i] + " " + oddM[i]);
+        }
 
         // 2g
 
@@ -90,6 +112,11 @@
             if(i % 2 == 0 && n[i] > 15){
                 n[i] = 0;
             }
+        }
+        console.log("Masyvo elementai didesni nei 15 pakeisti i 0: ");
+        for(let i = 0; i < 40; i++)
+        {
+            console.log(i + " " + n[i]);
         }
 
         // 2h
@@ -102,31 +129,6 @@
                 minInd = h;
             }
             h++;
-        }
-
-        // output
-
-        console.log("Masyve reiksmiu daugiau negu 10 yra: " + sum10);
-        console.log("Didziausia masyvo reiksme: " + maxVal + " ir ju indeksai: ");
-        for(let i = 0; i <= j; i++)
-        {
-            console.log(maxValInd[i]);
-        }
-        console.log("Visu poriniu indeksu suma yra: " + evenSum);
-        console.log("Naujas masyvas kurio reiksmes yra pradinio masyvo reiksmes su atimtu indeksu: ");
-        for(let i = 0; i < 30; i++)
-        {
-            console.log(i + " " + m[i]);
-        }
-        console.log("Masyvas papildytas 10 reiksmiu ir poriniai indeksai kurie didesni nei 15 paversti i 0: ");
-        for(let i = 0; i < 40; i++)
-        {
-            console.log(i + " " + n[i]);
-        }
-        console.log("Poriniai ir neporiniai pirmojo masyvo masyvai: ");
-        for(let i = 0; i < o; i++)
-        {
-            console.log(i + " " + evenM[i] + " " + oddM[i]);
         }
         console.log("Maziausios reiksmes kuri didesne negu 10 indeksas: " + minInd);
     </script>

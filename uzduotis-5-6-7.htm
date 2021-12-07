@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = [], m = [];// 2 arrays
+        let rand; // random number variables
+        let i = 1;
+        rand = Math.floor(Math.random() * 900 + 100);
+        n[0] = rand;
+        while (i < 100) // making first random array
+        {
+            let count = 0;
+            rand = Math.floor(Math.random() * 900 + 100);
+            for(let j = 0; j < n.length; j++)
+            {
+                if(rand == n[j]){
+                    count++;
+                }
+            }
+            if(count == 0){
+                n[i] = rand;
+                i++;
+            }
+        }
+        i = 1; // resetting variable values
+        rand = Math.floor(Math.random() * 900 + 100);
+        m[0] = rand;
+        while (i < 100) // making second random array
+        {
+            let count = 0;
+            rand = Math.floor(Math.random() * 900 + 100);
+            for(let j = 0; j < m.length; j++)
+            {
+                if(rand == m[j]){
+                    count++;
+                }
+            }
+            if(count == 0){
+                m[i] = rand;
+                i++;
+            }
+        }
+        for(i = 0; i < 100; i++) // output
+        {
+            console.log(i + " " + n[i] + " " + m[i]);
+        }
+
+        // 6 and 7
+
+        let un = []; // unique numbers from both arrays
+        let dup = []; // duplicate numbers
+        let k = 0, l = 0; // unique and duplicate numbers counter
+        for(i = 0; i < 100; i++)
+        {
+            count = 0;
+            for(let j = 0; j < 100; j++) // searching if number is duplicate
+            {
+                if(n[i] == m[j]){
+                    count++
+                }
+            }
+            if(count == 0){
+                un[k] = n[i];
+                k++;
+            }
+            else{
+                dup[l] = n[i];
+                l++;
+            }
+        }
+        console.log("Nesikartojantys sakiciai:");
+        for(i = 0; i < un.length; i++)
+        {
+            console.log( i + " " + un[i]);
+        }
+        console.log("Pasikartojantys skaiciai:")
+        for(i = 0; i < dup.length; i++)
+        {
+            console.log(i + " " + dup[i]);
+        }
+    </script>
+</body>
+</html>
